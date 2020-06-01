@@ -1,40 +1,36 @@
 import React from 'react';
-import App from './App';
 import PropTypes from 'prop-types';
 
 
 
-const ProductsTable = ({category,name,price}) => {
-    return (
-        <div>
-          <table>
-          <tr>
-            <td>
-           <p>category: {category}</p>
-            </td>
-          <td>
-           <p> {name}</p>
-          </td>
-          <td>
-            <p>{price}</p>
-          </td>
-          </tr>
-         </table>
-        </div>
- 
 
+const ProductsTable = ({products}) => {
+    return (
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">category</th>
+      <th scope="col">price</th>
+    </tr>
+  </thead>
+  <tbody>
+  {products.map((el,i)=><tr key={i}>
+<td>{el.name}</td>
+    <td>{el.category}</td>
+    <td>{el.price}</td>
+</tr>)}
+</tbody>
+</table>
  )
  ;
 
-}
-function ReactComponent(props) {
-  // ...implement render logic here
-}
-ReactComponent.propTypes = {
-  stringProp: PropTypes.string
+    };
 
-
-}
-
-
-export default ProductsTable
+ProductsTable.propTypes= {
+  products:PropTypes.array,
+  name:PropTypes.string,
+  category:PropTypes.string,
+  price:PropTypes.string,
+ }
+export default ProductsTable;
