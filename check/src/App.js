@@ -2,11 +2,6 @@ import React from 'react';
 import './App.css';
 import ProductsTable from './ProductsTable';
 
-
-
-
-
-
 function App (props){
   return (
     <div className="App">

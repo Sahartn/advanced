@@ -28,9 +28,12 @@ const ProductsTable = ({products}) => {
     };
 
 ProductsTable.propTypes= {
-  products:PropTypes.array,
+  products:PropTypes.arrayOf(PropTypes.exact({
+
   name:PropTypes.string,
   category:PropTypes.string,
   price:PropTypes.string,
  }
+ ))
+}
 export default ProductsTable;
